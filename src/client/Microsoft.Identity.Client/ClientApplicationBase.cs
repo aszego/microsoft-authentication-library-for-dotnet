@@ -131,7 +131,6 @@ namespace Microsoft.Identity.Client
                     new AcquireTokenCommonParameters(),
                     requestContext);
 
-            authParameters.SuggestedWebAppCacheKey = homeAccountId;
 
             // a simple session consisting of a single call
             CacheSessionManager cacheSessionManager = new CacheSessionManager(

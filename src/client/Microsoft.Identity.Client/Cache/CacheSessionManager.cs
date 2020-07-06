@@ -8,7 +8,6 @@ using Microsoft.Identity.Client.Cache.Items;
 using Microsoft.Identity.Client.Cache.Keys;
 using Microsoft.Identity.Client.Internal.Requests;
 using Microsoft.Identity.Client.OAuth2;
-using Microsoft.Identity.Client.TelemetryCore;
 using Microsoft.Identity.Client.TelemetryCore.Internal;
 using Microsoft.Identity.Client.TelemetryCore.Internal.Events;
 
@@ -109,7 +108,7 @@ namespace Microsoft.Identity.Client.Cache
                                _requestParams.Account,
                                hasStateChanged: false, 
                                TokenCacheInternal.IsApplicationCache,
-                               _requestParams.SuggestedWebAppCacheKey);
+                               SuggestedWebCacheKeyFactory.GetKeyFromRequest(_requestParams));
 
                             try
                             {
